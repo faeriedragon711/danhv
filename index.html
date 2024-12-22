@@ -503,28 +503,30 @@ http://www.tooplate.com/view/2075-digital-team
 	let currentPage = 1;
 
 	function displayProducts(page) {
-		const start = (page - 1) * productsPerPage;
-		const end = start + productsPerPage;
-		const paginatedProducts = products.slice(start, end);
+    const start = (page - 1) * productsPerPage;
+    const end = start + productsPerPage;
+    const paginatedProducts = products.slice(start, end);
 
-		const productGrid = document.getElementById('productGrid');
-		productGrid.innerHTML = '';
+    const productGrid = document.getElementById('productGrid');
+    let productHTML = '';
 
-		paginatedProducts.forEach(product => {
-			const productCard = `
-				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-					<div class="card h-100">
-						<img src="${product.image}" class="card-img-top" alt="${product.name}">
-						<div class="card-body">
-							<h5 class="card-title" style="height: 80px">${product.name}</h5>
-							<p class="card-text">Giá: ${product.price}</p>
-						</div>
+    paginatedProducts.forEach(product => {
+        productHTML += `
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card h-100">
+					<img src="${product.image}" class="card-img-top img-fluid product-img" alt="${product.name}">
+					<div class="card-body">
+						<h5 class="card-title" style="height: 80px">${product.name || 'No Name Available'}</h5>
+						<p class="card-text">Giá: ${product.price || 'Contact Us'}</p>
 					</div>
-				</div>
-			`;
-			productGrid.insertAdjacentHTML('beforeend', productCard);
-		});
-	}
+                </div>
+            </div>
+        `;
+    });
+
+    productGrid.innerHTML = productHTML;
+}
+
 
 	function setupPagination(totalProducts) {
 		const totalPages = Math.ceil(totalProducts / productsPerPage);
