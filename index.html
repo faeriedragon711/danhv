@@ -7,13 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="">
 	<meta name="description" content="">
-<!--
-
-Template 2075 Digital Team
-
-http://www.tooplate.com/view/2075-digital-team
-
--->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/animate.min.css">
@@ -56,7 +49,7 @@ http://www.tooplate.com/view/2075-digital-team
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#home" class="smoothScroll">TRANG CHỦ</a></li>
+				<!-- <li><a href="#home" class="smoothScroll">TRANG CHỦ</a></li> -->
 				<li><a href="#work" class="smoothScroll">LĨNH VỰC</a></li>
 				<li><a href="#pricing" class="smoothScroll">SẢN PHẨM</a></li>
 				<li><a href="#about" class="smoothScroll">VỀ CHÚNG TÔI</a></li>
@@ -531,13 +524,19 @@ http://www.tooplate.com/view/2075-digital-team
 
 		if (product) {
 			const popupContent = `
-				<h4>Thông tin chi tiết sản phẩm</h4>
-				<p><strong>Tên thương mại:</strong> ${product.name}</p>
-				<p><strong>Loại thuốc:</strong> ${product.type}</p>
-				<p><strong>Hoạt chất:</strong> ${product.ingredient}</p>
-				<p><strong>Nhà sản xuất:</strong> ${product.producer}</p>
-				<p><strong>Quy cách:</strong> ${product.package}</p>
-				<p><strong>Công dụng:</strong> ${product.description}</p>
+				<div class="col-lg-6 col-md-12 text-center">
+					<img src="${product.image}" alt="${product.name}" class="img-fluid">
+				</div>
+				<!-- Cột thông tin -->
+				<div class="col-lg-6 col-md-12">
+					<h4>Thông tin chi tiết sản phẩm</h4>
+					<p><strong>Tên thương mại:</strong> ${product.name}</p>
+					<p><strong>Loại thuốc:</strong> ${product.type}</p>
+					<p><strong>Hoạt chất:</strong> ${product.ingredient}</p>
+					<p><strong>Nhà sản xuất:</strong> ${product.producer}</p>
+					<p><strong>Quy cách:</strong> ${product.package}</p>
+					<p><strong>Công dụng:</strong> ${product.description}</p>
+				</div>
 			`;
 
 			// Tạo popup

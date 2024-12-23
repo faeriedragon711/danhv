@@ -737,14 +737,51 @@ CUSTOMIZE
 }
 
 /* CSS cho nội dung của popup */
+
 .popup-content {
-  position: relative;
-  background-color: white;
+  position: fixed;
+  top: 15%; /* Cách phần trên 10% để tránh header */
+  left: 50%;
+  transform: translate(-50%, 0);
+  max-width: 50%; /* Chiếm 50% chiều ngang trên desktop */
+  max-height: 80vh; /* Chiều cao tối đa của popup (90% chiều cao màn hình) */
+  overflow-y: auto; /* Cuộn dọc nếu nội dung dài */
+  overflow-x: hidden; /* Ẩn cuộn ngang */
   padding: 20px;
-  border-radius: 5px;
-  max-width: 600px;
-  width: 90%;
-  box-sizing: border-box;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  background-color: #fff;
+  margin: 0 auto; /* Canh giữa */
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 768px) {
+  .popup-content {
+      max-width: 90%; /* Chiếm 90% chiều ngang trên mobile */
+      max-height: 75vh; /* Giảm chiều cao tối đa để phù hợp hơn */
+      width: 90%;
+  }
+
+  .popup-content img {
+      max-width: 100%; /* Đảm bảo hình ảnh không bị tràn */
+      max-height: 200px;
+  }
+
+  .popup-content .col-md-6 {
+      width: 100%; /* Đưa cả ảnh và thông tin thành một cột */
+      margin-bottom: 15px;
+  }
+}
+
+.popup-content img {
+  max-width: 100%; /* Đảm bảo ảnh không vượt quá chiều ngang cột */
+  max-height: 400px; /* Giới hạn chiều cao ảnh */
+  height: auto; /* Giữ tỷ lệ ảnh */
+  object-fit: contain; /* Đảm bảo ảnh nằm gọn trong khung mà không bị cắt */
+  margin: 0 auto; /* Căn giữa */
+  display: block; /* Hiển thị ảnh dưới dạng khối */
+  border-radius: 8px; /* Bo góc nhẹ */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Thêm hiệu ứng bóng */
 }
 
 /* Nút đóng "×" ở góc trên phải */
