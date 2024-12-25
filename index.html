@@ -116,7 +116,7 @@
 			<div class="col-md-12 col-sm-12 text-center">
 				<div class="section-title">
 					<strong>02</strong>
-					<h1 class="heading bold">SẢN PHẨM</h1>
+					<h1 id="prod-scroll" class="heading bold">SẢN PHẨM</h1>
 					<hr>
 				</div>
 			</div>
@@ -483,7 +483,7 @@
 		{id:'57',year:'2024',name:'MAINGO 100EC – CHẾT NHANH DIỆT MẠNH',price:'Liên hệ',image:'WEBSITE/2024/Hình WEB/MAINGO 100EC.jpg',type:'Thuốc trừ sâu',ingredient:'Bifenthrin 100g/l',producer:'Hubei Tianzenong Bio-Engineering Co., Ltd.',package:'Thùng 100 chai x 100ml, Thùng 40 chai x 240ml, Thùng 30 chai x 450ml',description:'Bifenthrin có tác dụng tiếp xúc, vị độc, kháng mưa tốt, tấn công vào hệ thần kinh làm liệt cơ và chết côn trùng. Kiểm soát nhiều loại sâu bệnh như: sâu đục thân, rầy nâu, rệp, bọ trĩ. Được đăng ký phòng trừ sâu khoang trên ruộng khoai lang.'},
 	];
 
-	const productsPerPage = 12;
+	const productsPerPage = 8;
 	let currentPage = 1;
 
 	function displayProducts(page) {
@@ -529,8 +529,8 @@
 				</div>
 				<!-- Cột thông tin -->
 				<div class="col-lg-6 col-md-12">
-					<h4>Thông tin chi tiết sản phẩm</h4>
-					<p><strong>Tên thương mại:</strong> ${product.name}</p>
+					<hr>
+					<p><strong>${product.name}</strong></p>
 					<p><strong>Loại thuốc:</strong> ${product.type}</p>
 					<p><strong>Hoạt chất:</strong> ${product.ingredient}</p>
 					<p><strong>Nhà sản xuất:</strong> ${product.producer}</p>
@@ -599,7 +599,7 @@
 				currentPage = parseInt(this.dataset.page);
 				displayProducts(currentPage);
 				setupPagination(products.length);
-				document.getElementById('pricing').scrollIntoView({
+				document.getElementById('prod-scroll').scrollIntoView({
 					behavior: 'smooth'
 				});
 			});
