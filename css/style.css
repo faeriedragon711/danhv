@@ -8,7 +8,7 @@ http://www.tooplate.com/view/2075-digital-team
 
 body {
     background: #ffffff;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Merriweather', sans-serif;
     font-weight: 400;
     position: relative;
   }
@@ -226,13 +226,19 @@ navigation section
     color: #fff;
     }
 .custom-navbar .nav li a {
-    color: #ffffff;
     font-size: 14px;
     font-weight: 500;
-    }
+    color: white;
+    padding: 10px 20px;
+}
 .custom-navbar .nav li a:hover {
-  	background: transparent;
-   color: #eeeeee;
+    /* background: transparent; */
+    color: #eeeeee;
+    background: rgba(0, 0, 0, 0.6); /* Nền mờ */
+    padding: 10px 20px;
+    border-radius: 8px; /* Góc bo tròn, nếu muốn */
+    display: inline-block; /* Giới hạn nội dung */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Thêm bóng cho chữ */
 }
 .custom-navbar .nav > li > a:focus {
   background-color: transparent;
@@ -280,12 +286,27 @@ home section
   height: 100vh;
   text-align: center;
 }
+
 #home h1 {
   font-size: 40px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6); /* Nền mờ */
+  padding: 10px 20px;
+  border-radius: 8px; /* Góc bo tròn, nếu muốn */
+  display: inline-block; /* Giới hạn nội dung */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Thêm bóng cho chữ */
 }
+
 #home h3 {
   font-size: 14px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6); /* Nền mờ */
+  padding: 10px 20px;
+  border-radius: 8px; /* Góc bo tròn, nếu muốn */
+  display: inline-block; /* Giới hạn nội dung */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Thêm bóng cho chữ */
 }
+
 #home hr {
   width: 240px;
 }
