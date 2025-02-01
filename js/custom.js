@@ -103,7 +103,6 @@ $(function () {
     jQuery(document).ready(function () {
       $('#home').backstretch([
         "resources/photo 2025/banner_1.jpg",
-        "resources/photo 2025/banner_2.jpg",
         "resources/photo 2025/banner_3.jpg",
         "images/home-bg-slideshow3.jpg",
         "images/home-bg-slideshow4.jpg",
